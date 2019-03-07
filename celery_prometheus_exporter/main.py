@@ -31,7 +31,7 @@ TASKS_NAME = prometheus_client.Gauge(
     'celery_tasks_by_name', 'Number of tasks per state and name',
     ['state', 'name']
 )
-TASK_DURATIONS = prometheus_client.Histogram(
+TASK_DURATIONS = prometheus_client.Gauge(
     'celery_task_durations', 'Task durations by state and name',
     ['state', 'name'],
     buckets=(0.1, 1.0, 5.0, 10.0, 30.0, 60.0, 120.0, 300.0, float('inf'))
